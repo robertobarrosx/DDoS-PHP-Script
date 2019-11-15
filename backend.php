@@ -62,7 +62,8 @@ define('DDOS_OUTPUT_FORMAT_XML',	'xml' );
 // Output status
 define('DDOS_OUTPUT_STATUS_ERROR',	'error' );
 define('DDOS_OUTPUT_STATUS_SUCCESS','success' );
-
+//Liberar acesso para multiplos servidores
+header('Access-Control-Allow-Origin: *');
 
 
 
