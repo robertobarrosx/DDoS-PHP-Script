@@ -155,7 +155,7 @@
 							_log.value = '';
 						}
 						_log.select();
-						_log.value ='['+dosUrl+']\n'+ data +_log.value
+						_log.value ='['+dosUrl+']\n'+ data +_log.value+'\n';
 						if(intervalHandler == null){
 							inputLock(false);
 						}
