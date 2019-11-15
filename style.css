@@ -1,0 +1,135 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900);
+ .ddos-form {
+	 margin-top: 30px;
+}
+ .ddos-form .input-block {
+	 background-color: rgba(255, 255, 255, .8);
+	 border: solid 1px #ff512f;
+	 width: 100%;
+	 height: 60px;
+	 padding: 25px;
+	 position: relative;
+	 margin-bottom: 20px;
+	 transition: all 0.3s ease-out;
+}
+ .ddos-form .input-block.focus {
+	 background-color: #fff;
+	 border: solid 1px #fb2900;
+}
+ .ddos-form .input-block.textarea {
+	 height: auto;
+}
+ .ddos-form .input-block.textarea .form-control {
+	 height: auto;
+	 resize: none;
+}
+ .ddos-form .input-block label {
+	 position: absolute;
+	 left: 25px;
+	 top: 25px;
+	 display: block;
+	 margin: 0;
+	 font-weight: 300;
+	 z-index: 1;
+	 color: #333;
+	 font-size: 18px;
+	 line-height: 10px;
+}
+ .ddos-form .input-block .form-control {
+	 background-color: transparent;
+	 padding: 0;
+	 border: none;
+	 border-radius: 0;
+	 box-shadow: none;
+	 height: auto;
+	 position: relative;
+	 z-index: 2;
+	 font-size: 18px;
+	 color: #333;
+}
+ .ddos-form .input-block .form-control:focus label {
+	 top: 0;
+}
+ .ddos-form .square-button {
+	 background-color: rgba(255, 255, 255, .8);
+	 color: #fb2900;
+	 font-size: 26px;
+	 text-transform: uppercase;
+	 font-weight: 700;
+	 text-align: center;
+	 border-radius: 2px;
+	 transition: all 0.3s ease;
+	 padding: 0 60px;
+	 height: 60px;
+	 border: none;
+	 width: 100%;
+}
+ .ddos-form .square-button:hover, .ddos-form .square-button:focus {
+	 background-color: white;
+}
+.square-button:disabled {
+	border: 1px solid darkgray;
+	background-color: darkgray;
+	color: gray;
+}
+.square-button:disabled:hover{
+	border: 1px solid darkgray;
+	background-color: darkgray;
+	color: gray;
+}
+ @media (min-width: 768px) {
+	 .ddos-wrap {
+		 width: 80%;
+		 margin: auto;
+	}
+}
+/*----page styles---*/
+ body {
+	 background-image: linear-gradient(to right, #ff512f, #dd2476);
+	 font-family: 'Roboto', sans-serif;
+}
+ .ddos-wrap {
+	 padding: 15px;
+}
+ h1 {
+	 background-color: white;
+	 color: #ff7c62;
+	 padding: 40px;
+	 margin: 0 0 50px;
+	 font-size: 30px;
+	 text-transform: uppercase;
+	 font-weight: 700;
+	 text-align: center;
+}
+ h1 small {
+	 font-size: 18px;
+	 display: block;
+	 text-transform: none;
+	 font-weight: 300;
+	 margin-top: 10px;
+	 color: #ff7c62;
+}
+ .made-by {
+	 margin-top: 40px;
+	 padding: 10px;
+	 clear: left;
+	 text-align: center;
+	 font-size: 10px;
+	 font-family: arial;
+	 color: #fff;
+}
+ .made-by i {
+	 font-style: normal;
+	 color: #f50057;
+	 font-size: 14px;
+	 position: relative;
+	 top: 2px;
+}
+ .made-by a {
+	 color: #fff;
+	 text-decoration: none;
+}
+ .made-by a:hover {
+	 text-decoration: underline;
+}
+ 

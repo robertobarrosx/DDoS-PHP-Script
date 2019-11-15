@@ -34,8 +34,8 @@
 // Current version
 define('DDOS_VERSION',				'0.2' );
 
-// MD5 Password to be used when the script is executed from the webserver, default is "apple"
-define('DDOS_PASSWORD',				'1f3870be274f6c49b3e31a0c6728957f' );
+// MD5 Password to be used when the script is executed from the webserver, default is "xiaomi"
+define('DDOS_PASSWORD',				'ff5e66b76340c5636aa40e7c6a46628f' );
 
 // Script max execution time
 define('DDOS_MAX_EXECUTION_TIME',0);

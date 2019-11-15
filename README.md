@@ -2,6 +2,18 @@
 
 Script to perform a DDoS UDP flood by PHP
 
+## Index.php
+You can add multiple servers where backend.php is located.
+Just change this part of the index.php code
+```javascript
+var dosList= [
+	"./",
+	"3.0.0.1/"
+	"133.33.33.33/"
+	"122.22.22.22/"
+];
+```
+
 ## Usage
 
 From web server (visit the page):

