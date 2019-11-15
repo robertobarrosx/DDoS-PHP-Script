@@ -8,9 +8,9 @@ Just change this part of the index.php code
 ```javascript
 var dosList= [
 	"./",
-	"3.0.0.1/"
-	"133.33.33.33/"
-	"122.22.22.22/"
+	"http://3.0.0.1/"
+	"http://133.33.33.33/"
+	"http://122.22.22.22/"
 ];
 ```
 
